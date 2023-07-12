@@ -1,6 +1,10 @@
+import 'package:dream/screens/Ac%C4%B1kSiparisler.dart';
 import 'package:dream/screens/AdayCariler.dart';
 import 'package:dream/screens/CarilerPage.dart';
+import 'package:dream/screens/DovizKurlari.dart';
+import 'package:dream/screens/KullaniciY%C3%B6netimiPage.dart';
 import 'package:dream/screens/LojistikY%C3%B6netimi.dart';
+import 'package:dream/screens/MailAlicilari.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:menu_bar/menu_bar.dart';
@@ -313,7 +317,7 @@ class _HomePageState extends State<HomePage> {
                                   //Navigator.push(context, MaterialPageRoute(builder: (context)=>FinansYonetimPage()));
                                 },
                                 child: Container(
-                                  width: 100,
+                                  width: 105,
                                   height: 105,
                                   decoration: BoxDecoration(
                                     color: Colors.grey[200],
@@ -348,14 +352,19 @@ class _HomePageState extends State<HomePage> {
                                     child: Center(child: Text(" İŞ ZEKASI"+"\nRAPORLARI",style: TextStyle(fontWeight: FontWeight.w500),)),
                                   ),
                                   SizedBox(height: 5,),
-                                  Container(
-                                    width: 100,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(4),
+                                  GestureDetector(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>KullaniciYonetimiPage(initialSize: Size(840,495))));
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
+                                      child: Center(child: Text("KULLANICI"+"\nYÖNETİMİ",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
-                                    child: Center(child: Text("KULLANICI"+"\nYÖNETİMİ",style: TextStyle(fontWeight: FontWeight.w500),)),
                                   )
                                 ],
                               ),
@@ -379,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(height: 5,),
                                   GestureDetector(
                                     onTap: (){
-                                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>EkstreGonderimPage(initialSize: Size(1005,605))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DovizKurlariPage(initialSize: Size(515,405))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -411,56 +420,72 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   SizedBox(height: 5,),
-                                  Container(
-                                    width: 100,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(4),
+                                  GestureDetector(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AcikSiparisler(initialSize:Size(840,495))));
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
+                                      child: Center(child: Text("     AÇIK"+"\nSİPARİŞLER",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
-                                    child: Center(child: Text("     AÇIK"+"\nSİPARİŞLER",style: TextStyle(fontWeight: FontWeight.w500),)),
-                                  )
+                                  ),
                                 ],
                               ),
-                              SizedBox(width: 5,),
                               Column(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width: 55,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey[200],
-                                          borderRadius: BorderRadius.circular(4),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left:6),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          width: 50,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius: BorderRadius.circular(4),
+                                          ),
+                                          child: Center(child: Text("   ZİYARET"+"\nPLANLAMA",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
                                         ),
-                                        child: Center(child: Text("   ZİYARET"+"\nPLANLAMA",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
-                                      ),
-                                      SizedBox(width: 5,),
-                                      Container(
-                                        width: 55,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey[200],
-                                          borderRadius: BorderRadius.circular(4),
+                                        SizedBox(width: 5,),
+                                        Container(
+                                          width: 50,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey[200],
+                                            borderRadius: BorderRadius.circular(4),
+                                          ),
+                                          child: Center(child: Text("   SATIŞ"+"\nŞARTLARI",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
                                         ),
-                                        child: Center(child: Text("   SATIŞ"+"\nŞARTLARI",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                   SizedBox(height: 10,),
-                                  Container(
-                                    width: 114,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage('assets/images/vLogokopya.png'),
-                                            fit: BoxFit.cover
-                                        )
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 7),
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MailAlicilari(initialSize:Size(640,495))));
+                                      },
+                                      child: Container(
+                                        width: 105,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                          borderRadius: BorderRadius.circular(4),
+                                        ),
+                                        child: Center(child: Text("    MAİL"+"\nALICILARI",style: TextStyle(fontWeight: FontWeight.w500),)),
+                                      ),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
+
                             ],
                           )
                         ],

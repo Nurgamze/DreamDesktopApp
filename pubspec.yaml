@@ -36,6 +36,7 @@ dependencies:
   intl:
   flutter_menu:
   flutter_cupertino_datetime_picker:
+  http:
 
 dev_dependencies:
   flutter_test:
