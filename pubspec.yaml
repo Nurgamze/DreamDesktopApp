@@ -31,12 +31,22 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  bitsdojo_window: ^0.1.5
   menu_bar: ^0.5.3
   intl:
   flutter_menu:
   flutter_cupertino_datetime_picker:
   http:
+  scroll_snap_list:
+  vs_scrollbar:
+  sync_scroll:
+  data_table_2:
+  bitsdojo_window: ^0.1.5
+  linked_scroll_controller: ^0.2.0
+  gtk_window:
+  gtk:
+  scrollable_positioned_list:
+  dual_scroll:
+  adaptive_scrollbar: ^2.1.2
 
 dev_dependencies:
   flutter_test:

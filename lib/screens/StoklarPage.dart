@@ -19,7 +19,7 @@ class StoklarPage extends StatefulWidget {
   }
 
   void eskiBoyutaDon() {
-    var initialSize = Size(480, 350); // Eski boyutu burada belirleyin
+    var initialSize = Size(480, 400); // Eski boyutu burada belirleyin
     appWindow.size = initialSize;
     appWindow.minSize = initialSize;
     appWindow.maxSize = initialSize;
@@ -47,6 +47,7 @@ class _StoklarPageState extends State<StoklarPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         width: 780,
@@ -585,6 +586,7 @@ class _StoklarPageState extends State<StoklarPage> {
                         child: Center(child: Text("EMAİL İLE GÖNDER",style: TextStyle(fontSize: 10),)),
                       ),
                       SizedBox(width: 5,),
+
                       Container(
                         height: 30,
                         width: 40,
@@ -597,7 +599,13 @@ class _StoklarPageState extends State<StoklarPage> {
                           color: Colors.white,
                           onPressed: () {
                             Navigator.push(context,MaterialPageRoute(builder: (context){
-                              var eskiboyut=HomePage();
+                              var eskiboyut=Stack(
+                                  children:[
+                                    Center(child: Positioned(
+                                        top: 400,
+                                        left: screenSize.width / 2,
+                                        child: HomePage()))
+                                  ]);
                               return eskiboyut;
                             }),
                             );

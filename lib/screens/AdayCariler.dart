@@ -19,7 +19,7 @@ class AdayCarilerPage extends StatefulWidget {
   }
 
   void eskiBoyutaDon() {
-    var initialSize = Size(480, 350); // Eski boyutu burada belirleyin
+    var initialSize = Size(480, 400); // Eski boyutu burada belirleyin
     appWindow.size = initialSize;
     appWindow.minSize = initialSize;
     appWindow.maxSize = initialSize;

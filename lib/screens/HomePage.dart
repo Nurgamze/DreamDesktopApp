@@ -1,3 +1,4 @@
+import 'package:dream/main.dart';
 import 'package:dream/screens/Ac%C4%B1kSiparisler.dart';
 import 'package:dream/screens/AdayCariler.dart';
 import 'package:dream/screens/CarilerPage.dart';
@@ -5,13 +6,16 @@ import 'package:dream/screens/DovizKurlari.dart';
 import 'package:dream/screens/KullaniciY%C3%B6netimiPage.dart';
 import 'package:dream/screens/LojistikY%C3%B6netimi.dart';
 import 'package:dream/screens/MailAlicilari.dart';
+import 'package:dream/screens/silinecek.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:menu_bar/menu_bar.dart';
+import 'PersonelYonetimi.dart';
 import 'SatisPazarlamaPage.dart';
 import 'StoklarPage.dart';
 import 'CiroTablosuPage.dart';
 import 'EkstreGonderimPage.dart';
+import 'MailAlicilari.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -220,7 +224,6 @@ class _HomePageState extends State<HomePage> {
                         border: Border.all(
                           color: Colors.grey.shade100,
                           width: 2.0,
-
                         )
                     ),
                     child: Padding(
@@ -231,7 +234,9 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               GestureDetector(
                                 onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>StoklarPage(initialSize: Size(780,505))));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
+                                      Stack(children:[
+                                        Positioned.fill(child: StoklarPage(initialSize: Size(780,505)))])));
                                 },
                                 child: Container(
                                   width: 100,
@@ -239,6 +244,7 @@ class _HomePageState extends State<HomePage> {
                                   decoration: BoxDecoration(
                                     color: Colors.grey[200],
                                     borderRadius: BorderRadius.circular(3),
+                                    border: Border.all(color: Colors.black26)
                                   ),
                                   child: Center(child: Text("STOKLAR",style: TextStyle(fontWeight: FontWeight.w500),)),
                                 ),
@@ -248,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   GestureDetector(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>CarilerPage(initialSize: Size(780,505))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: CarilerPage(initialSize: Size(780,505)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -256,6 +262,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(3),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("CARİLER",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
@@ -263,7 +270,7 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(height: 5,),
                                   GestureDetector(
                                     onTap:(){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AdayCarilerPage(initialSize: Size(780,505))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: AdayCarilerPage(initialSize: Size(780,505)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -271,6 +278,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(3),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("  ADAY"+"\nCARİLER",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
@@ -282,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   GestureDetector(
                                     onTap:(){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SatisPazarlamaPage(initialSize: Size(780,505))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: SatisPazarlamaPage(initialSize: Size(780,505)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -290,6 +298,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(3),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("      SATIŞ"+"\n PAZARLAMA",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
@@ -297,7 +306,7 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(height: 5,),
                                   GestureDetector(
                                     onTap:(){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LojistikYonetimiPage(initialSize: Size(780,505))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: LojistikYonetimiPage(initialSize: Size(780,505)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -305,6 +314,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(3),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("  LOJİSTİK"+"\nYÖNETİMİ",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
@@ -322,6 +332,7 @@ class _HomePageState extends State<HomePage> {
                                   decoration: BoxDecoration(
                                     color: Colors.grey[200],
                                     borderRadius: BorderRadius.circular(3),
+                                      border: Border.all(color: Colors.black26)
                                   ),
                                   child: Center(
                                       child: Column(
@@ -348,13 +359,14 @@ class _HomePageState extends State<HomePage> {
                                     decoration: BoxDecoration(
                                       color: Colors.grey[200],
                                       borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(color: Colors.black26)
                                     ),
                                     child: Center(child: Text(" İŞ ZEKASI"+"\nRAPORLARI",style: TextStyle(fontWeight: FontWeight.w500),)),
                                   ),
                                   SizedBox(height: 5,),
                                   GestureDetector(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>KullaniciYonetimiPage(initialSize: Size(840,495))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: KullaniciYonetimiPage(initialSize: Size(840,495)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -362,10 +374,27 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("KULLANICI"+"\nYÖNETİMİ",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
-                                  )
+                                  ),
+                                  SizedBox(height: 5,),
+                                  GestureDetector(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: PersonelYonetimiPage(initialSize: Size(840,495)))));
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
+                                      ),
+                                      child: Center(child: Text("PERSONEL"+"\nYÖNETİMİ",style: TextStyle(fontWeight: FontWeight.w500),)),
+                                    ),
+                                  ),
                                 ],
                               ),
                               SizedBox(width: 7,),
@@ -373,7 +402,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   GestureDetector(
                                     onTap:(){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>CiroTablosuPage(initialSize: Size(605,395))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: CiroTablosuPage(initialSize: Size(605,395)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -381,6 +410,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("   CİRO"+"\nTABLOSU",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
@@ -388,7 +418,7 @@ class _HomePageState extends State<HomePage> {
                                   SizedBox(height: 5,),
                                   GestureDetector(
                                     onTap: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DovizKurlariPage(initialSize: Size(515,405))));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: DovizKurlariPage(initialSize: Size(515,405)))));
                                     },
                                     child: Container(
                                       width: 100,
@@ -396,10 +426,27 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("  DÖVİZ"+"\nKURLARI",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
-                                  )
+                                  ),
+                                  SizedBox(height: 5,),
+                                  GestureDetector(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Center(child: MailAlicilari2(initialSize: Size(710,500)))));
+                                    },
+                                    child: Container(
+                                      width: 100,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
+                                      ),
+                                      child: Center(child: Text("DENEME",style: TextStyle(fontWeight: FontWeight.w500),)),
+                                    ),
+                                  ),
                                 ],
                               ),
                               SizedBox(width: 7,),
@@ -415,6 +462,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("    EKSTRE"+"\nGÖNDERİM",style: TextStyle(fontWeight: FontWeight.w800,fontStyle: FontStyle.italic),)),
                                     ),
@@ -430,10 +478,12 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(color: Colors.black26)
                                       ),
                                       child: Center(child: Text("     AÇIK"+"\nSİPARİŞLER",style: TextStyle(fontWeight: FontWeight.w500),)),
                                     ),
                                   ),
+                                  SizedBox(height: 55,),
                                 ],
                               ),
                               Column(
@@ -449,6 +499,7 @@ class _HomePageState extends State<HomePage> {
                                           decoration: BoxDecoration(
                                             color: Colors.grey[200],
                                             borderRadius: BorderRadius.circular(4),
+                                              border: Border.all(color: Colors.black26)
                                           ),
                                           child: Center(child: Text("   ZİYARET"+"\nPLANLAMA",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
                                         ),
@@ -459,6 +510,7 @@ class _HomePageState extends State<HomePage> {
                                           decoration: BoxDecoration(
                                             color: Colors.grey[200],
                                             borderRadius: BorderRadius.circular(4),
+                                              border: Border.all(color: Colors.black26)
                                           ),
                                           child: Center(child: Text("   SATIŞ"+"\nŞARTLARI",style: TextStyle(fontSize:8,fontWeight: FontWeight.w500),)),
                                         ),
@@ -470,7 +522,7 @@ class _HomePageState extends State<HomePage> {
                                     padding: const EdgeInsets.only(left: 7),
                                     child: GestureDetector(
                                       onTap: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MailAlicilari(initialSize:Size(640,495))));
+                                       Navigator.push(context, MaterialPageRoute(builder: (context)=>MailAlicilari(initialSize:Size(740,500))));
                                       },
                                       child: Container(
                                         width: 105,
@@ -478,14 +530,15 @@ class _HomePageState extends State<HomePage> {
                                         decoration: BoxDecoration(
                                           color: Colors.grey[200],
                                           borderRadius: BorderRadius.circular(4),
+                                            border: Border.all(color: Colors.black26)
                                         ),
                                         child: Center(child: Text("    MAİL"+"\nALICILARI",style: TextStyle(fontWeight: FontWeight.w500),)),
                                       ),
                                     ),
                                   ),
+                                  SizedBox(height: 55,),
                                 ],
                               ),
-
                             ],
                           )
                         ],

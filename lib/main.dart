@@ -8,10 +8,12 @@ void main() async{
   runApp(const MyApp());
   doWhenWindowReady((){
     //appWindow.size=Size(600,450);
-    var initialSize=Size(480,350);
+    var initialSize=Size(480,400);
     appWindow.size=initialSize;
     appWindow.minSize=initialSize;
     appWindow.maxSize=initialSize;
+    appWindow.alignment = Alignment.center;
+    appWindow.show();
   });
 }
 class MyApp extends StatelessWidget {
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return  MaterialApp(
         debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-        home: HomePage(),
+        home: Center(child: HomePage()),
      );
   }
 }

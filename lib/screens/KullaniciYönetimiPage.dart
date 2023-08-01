@@ -2,7 +2,6 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:dream/screens/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'YeniKullanici.dart';
 
 
@@ -14,7 +13,7 @@ class KullaniciYonetimiPage extends StatefulWidget {
   State<KullaniciYonetimiPage> createState() => _KullaniciYonetimiPageState();
 
   void eskiBoyutaDon() {
-    var initialSize = Size(480, 350); // Eski boyutu burada belirleyin
+    var initialSize = Size(480, 400); // Eski boyutu burada belirleyin
     appWindow.size = initialSize;
     appWindow.minSize = initialSize;
     appWindow.maxSize = initialSize;
